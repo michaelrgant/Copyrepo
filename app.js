@@ -19,8 +19,10 @@ db.authenticate().then(() => {
 })
 app.use('/wiki', require('./routes/wiki'))
 
+app.use('/users', require('./routes/users'))
+
 app.get('/', (req, res, next) => {
-  res.send(layOut('hello world'))
+  res.redirect('/wiki')
 })
 
 const init = async () => {
